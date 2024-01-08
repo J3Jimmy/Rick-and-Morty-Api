@@ -21,8 +21,9 @@ function App() {
   const inputLocation = useRef()
 
   const handleSubmit = e => {
-    e.preventDefault()
-    setInputValue(inputLocation.current.value)
+    e.preventDefault();
+    setInputValue(inputLocation.current.value);
+    inputLocation.current.value = '';
   }
   
   return (
