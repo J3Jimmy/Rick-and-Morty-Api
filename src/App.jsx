@@ -28,7 +28,7 @@ function App() {
   
   return (
     <div>
-      <h1 className='title_rick'>Rick and Morty</h1>
+      <h1 className='title_rick'>Rick and Morty Api</h1>
       <form className='input__search' onSubmit={handleSubmit}>
         <input ref={inputLocation} type="text" />
         <button className='button__search'>Search</button>
