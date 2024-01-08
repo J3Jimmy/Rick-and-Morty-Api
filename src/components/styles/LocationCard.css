@@ -1,0 +1,32 @@
+.CardsLocation {
+  display: flex;
+  justify-content: center;
+  color: #999;
+  background-color: #062226;
+  font-weight: 300;
+  margin-left: 19%;
+  margin-right: 19%;
+  
+}
+.CardsLocation1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #977979;
+  margin-left: 19%;
+  margin-right: 19%;
+  
+  }
+.info__cards {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.CardsLocation2 {
+  display: flex;
+  justify-content: center;
+  color: #9b4141;
+  background-color: #243a3f;
+  font-weight: 600;
+  margin-left: 19%;
+  margin-right: 19%;
+}

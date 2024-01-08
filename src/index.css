@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+  background-color: #54b2be;
+}
+h1, h2, h3, p, ul, hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0
+  ;
+}
+input, button {
+  font-family: inherit;
+}
+input {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.title_rick {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.input__search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  
+}
+.button__search {
+  background-color: #4CAF50; /* Color de fondo verde */
+  border: none; /* Sin borde */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  display: inline-block; /* Mostrar como bloque en línea */
+  transition-duration: 0.4s; /* Duración de la transición */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.button__search:hover {
+  background-color: #45a049; /* Color de fondo verde más oscuro al pasar el mouse */
+}
+.input__search input {
+  border-radius: 10px;
+  text-align: center;
+}
