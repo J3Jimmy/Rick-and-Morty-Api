@@ -3,7 +3,7 @@ import './App.css'
 import useFetch from './hooks/useFetch'
 import getRandomNumber from './utils/getRandomNumber'
 import LocationCard from './components/LocationCard'
-import ResidentCard from './components/residentCard'
+import ResidentCard from './components/ResidentCard'
 
 
 function App() {
