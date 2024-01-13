@@ -4,6 +4,7 @@ import useFetch from './hooks/useFetch'
 import getRandomNumber from './utils/getRandomNumber'
 import LocationCard from './components/LocationCard'
 import ResidentCard from './components/ResidentCard'
+import Pagination from '@mui/material/Pagination';
 
 
 function App() {
@@ -12,11 +13,24 @@ function App() {
   const [inputValue, setInputValue] = useState(locationId)
   const url = `https://rickandmortyapi.com/api/location/${inputValue}`
   const [ location, getLocation, hasError ] = useFetch(url)
-  
 
-  useEffect (() => {
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    event.preventDefault()
+    setPage(value);
+  };
+
+  const [totalResidents, setTotalResidents] = useState()
+
+    const [limitResidents, setLimitResidents] = useState(8)
+  
+    useEffect (() => {
     getLocation()
   }, [inputValue])
+
+    useEffect(() => {
+    setTotalResidents(location?.residents.length)
+      }, [page, handleChange])
 
   const inputLocation = useRef()
 
@@ -25,7 +39,14 @@ function App() {
     setInputValue(inputLocation.current.value);
     inputLocation.current.value = '';
   }
+ 
+  let startIndex = (page - 1) * 8;
+  let endIndex = startIndex + 8;
+  let residents = location?.residents.slice(startIndex, endIndex) || [];
   
+  
+
+
   return (
     <div>
       <h1 className='title_rick'>Rick and Morty Api</h1>
@@ -41,7 +62,7 @@ function App() {
               <LocationCard location={location} />
               <div className='resident__container'>
                 {
-                  location?.residents.map(url => (
+                  residents?.map(url => (
                     <ResidentCard 
                       key={url}
                       url={url}
@@ -49,10 +70,18 @@ function App() {
                   ))
                 }
               </div>
+              <Pagination 
+              count={parseInt(Math.ceil(totalResidents/8),10)}
+              page={page}
+              onChange={handleChange}
+              
+              />
+              
             </>
           )
       }
     </div>
+    
   );
 }
 
